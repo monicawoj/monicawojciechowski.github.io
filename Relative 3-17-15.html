@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Leverage Radial Bar Chart</title>
+    <style>
+
+#chart {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+}
+#chart path {
+  fill: none;
+}
+
+/* layers */
+#chart .layer-0 path {
+  fill: steelblue;
+}
+#chart .layer-1 path {
+  fill: white !important;
+  opacity: 0.3;
+  stroke-width: 2px;
+  stroke: #999;
+}
+
+/* Outer circle, tick-circles and spokes */
+#chart circle.outer {
+  stroke: #aaa;
+  stroke-dasharray: 4, 4;  
+}
+#chart .tick-circles circle {
+  stroke: #ccc;
+  stroke-dasharray: 4, 4;  
+}
+#chart .spokes line {
+  stroke: #666;
+  stroke-width: 0.2;
+}
+
+/* Axis */
+#chart .axis text {
+  font-size: 11px;
+}
+#chart .axis path {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+#chart .axis line {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+
+/* Labels */
+#chart .labels text {
+  fill: #333;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+#chart2 {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+}
+#chart2 path {
+  fill: none;
+}
+
+/* layers */
+#chart2 .layer-0 path {
+  fill: steelblue;
+}
+#chart2 .layer-1 path {
+  fill: white !important;
+  opacity: 0.3;
+  stroke-width: 2px;
+  stroke: #999;
+}
+
+/* Outer circle, tick-circles and spokes */
+#chart2 circle.outer {
+  stroke: #aaa;
+  stroke-dasharray: 4, 4;  
+}
+#chart2 .tick-circles circle {
+  stroke: #ccc;
+  stroke-dasharray: 4, 4;  
+}
+#chart2 .spokes line {
+  stroke: #666;
+  stroke-width: 0.2;
+}
+
+/* Axis */
+#chart2 .axis text {
+  font-size: 11px;
+}
+#chart2 .axis path {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+#chart2 .axis line {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+
+/* Labels */
+#chart2 .labels text {
+  fill: #333;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* update button */
+#update {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Leverage Inventory- Self vs 3rd-Party Relative Scores</h1>
+  <p>Each wedge shows your score percentile (relative to class) for given leverage factor. Left shows "Self" scores relative to peer evaluations of themselves. Right shows "3rd-Party" scores relative to other classmates' 3rd-party scores. "Hard" power is indicatd in red, "Soft" power in blue, and "Smart" power in green.</p>
+ 
+<p>
+  <label for="nValue" 
+         style="display: inline-block; width: 240px; text-align: right">
+         Student ID = <span id="nValue-value">…</span>
+  </label>
+  <input type="range" min="0" max="100" id="nValue">
+</p>
+
+<div style="display: inline-block;" id="chart"></div>
+<div style="display: inline-block;" id="chart2"></div>
+<p>Leverage Inventory beta reports designed by Monica Wojciechowski, 3/17/15</p>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/radialBarChart.js"></script>
+<script>
+
+var levdata = "lev_relative.csv";
+var result = 0;
+
+d3.csv(levdata, function(data) {
+    dataset = data.map(function(d) {return {
+        id_run:d.id_run, 
+        Network1:+d.Network1,
+        Coalition1:+d.Coalition1,
+        Pathos1:+d.Pathos1,
+        Team1:+d.Team1,
+        Exchange1:+d.Exchange1,
+        Allocentrism1:+d.Allocentrism1,
+        Agency1:+d.Agency1,
+        SA1:+d.SA1,
+        Intentionality1:+d.Intentionality1,
+        Logos1:+d.Logos1,
+        Might1:+d.Might1,
+        Ethos1:+d.Ethos1,
+        Network3:+d.Network3,
+        Coalition3:+d.Coalition3,
+        Pathos3:+d.Pathos3,
+        Team3:+d.Team3,
+        Exchange3:+d.Exchange3,
+        Allocentrism3:+d.Allocentrism3,
+        Agency3:+d.Agency3,
+        SA3:+d.SA3,
+        Intentionality3:+d.Intentionality3,
+        Logos3:+d.Logos3,
+        Might3:+d.Might3,
+        Ethos3:+d.Ethos3,
+    };
+});
+
+//update the data with input of student id number
+var self_relative = [
+  {
+  "data": {
+     
+    "Pathos": dataset[result].Pathos1,
+    "Team-building": dataset[result].Team1,
+    "Exchange": dataset[result].Exchange1,
+    "Allocentrism": dataset[result].Allocentrism1,
+    "Agency": dataset[result].Agency1,
+    "Situation Awareness": dataset[result].SA1,
+    "Intentionality": dataset[result].Intentionality1,
+    "Logos": dataset[result].Logos1,
+    "Might": dataset[result].Might1,
+    "Ethos": dataset[result].Ethos1,
+    "Network": dataset[result].Network1,
+    "Coalition": dataset[result].Coalition1,
+    }
+  }
+];
+
+//update the data with input of student id number
+var third_relative = [
+  {
+  "data": {
+   
+    "Pathos": dataset[result].Pathos3,
+    "Team-building": dataset[result].Team3,
+    "Exchange": dataset[result].Exchange3,
+    "Allocentrism": dataset[result].Allocentrism3,
+    "Agency": dataset[result].Agency3,
+    "Situation Awareness": dataset[result].SA3,
+    "Intentionality": dataset[result].Intentionality3,
+    "Logos": dataset[result].Logos3,
+    "Might": dataset[result].Might3,
+    "Ethos": dataset[result].Ethos3,
+     "Network": dataset[result].Network3,
+    "Coalition": dataset[result].Coalition3, 
+    }
+  }
+];
+
+var chart1 = radialBarChart()
+  .barHeight(225)
+  .reverseLayerOrder(true)
+  .capitalizeLabels(true)
+  .barColors([ '#9999ff', '#9999ff', '#9999ff', '#9999ff', '#abf9b4', '#abf9b4', '#abf9b4', '#abf9b4', '#ff7f7f', '#ff7f7f', '#9999ff', '#9999ff',])
+  .domain([0,100])
+  .tickValues([10,20,30,40,50,60,70,80,90,100])
+  .tickCircleValues([10,20,30,40,50,60,70,80,90]);
+
+  d3.select('#chart')
+    .datum(self_relative)
+    .call(chart1);
+
+var chart2 = radialBarChart()
+  .barHeight(225)
+  .reverseLayerOrder(true)
+  .capitalizeLabels(true)
+  .barColors([ '#9999ff', '#9999ff', '#9999ff', '#9999ff', '#abf9b4', '#abf9b4', '#abf9b4', '#abf9b4', '#ff7f7f', '#ff7f7f', '#9999ff', '#9999ff',])
+  .domain([0,100])
+  .tickValues([10,20,30,40,50,60,70,80,90,100])
+  .tickCircleValues([10,20,30,40,50,60,70,80,90]);
+
+  d3.select('#chart2')
+    .datum(third_relative)
+    .call(chart2);
+
+// when the input range changes update the circle 
+d3.select("#nValue").on("input", function() {
+  update(+this.value);
+});
+
+// Initial starting radius of the circle 
+update(0);
+result = document.getElementById('nValue').value;
+
+// update the elements
+function update(nValue) {
+
+  // adjust the text on the range slider
+  d3.select("#nValue-value").text(nValue);
+  d3.select("#nValue").property("value", nValue);
+
+  //get the new Student ID
+  result = document.getElementById('nValue').value;
+
+//update the data with new ID
+var self_relative = [
+  {
+  "data": {
+   
+    "Pathos": dataset[result].Pathos1,
+    "Team-building": dataset[result].Team1,
+    "Exchange": dataset[result].Exchange1,
+    "Allocentrism": dataset[result].Allocentrism1,
+    "Agency": dataset[result].Agency1,
+    "Situation Awareness": dataset[result].SA1,
+    "Intentionality": dataset[result].Intentionality1,
+    "Logos": dataset[result].Logos1,
+    "Might": dataset[result].Might1,
+    "Ethos": dataset[result].Ethos1,
+     "Network": dataset[result].Network1,
+    "Coalition": dataset[result].Coalition1, 
+    }
+  }
+];
+
+  // update the chart with new data
+  d3.select("#chart") 
+    .datum(self_relative)
+    .call(chart1);
+
+//update the data with input of student id number
+var third_relative = [
+  {
+  "data": {
+ 
+    "Pathos": dataset[result].Pathos3,
+    "Team-building": dataset[result].Team3,
+    "Exchange": dataset[result].Exchange3,
+    "Allocentrism": dataset[result].Allocentrism3,
+    "Agency": dataset[result].Agency3,
+    "Situation Awareness": dataset[result].SA3,
+    "Intentionality": dataset[result].Intentionality3,
+    "Logos": dataset[result].Logos3,
+    "Might": dataset[result].Might3,
+    "Ethos": dataset[result].Ethos3,
+        "Network": dataset[result].Network3,
+    "Coalition": dataset[result].Coalition3,
+    }
+  }
+];
+
+  // update the chart with new data
+  d3.select("#chart2") 
+    .datum(third_relative)
+    .call(chart2);
+
+}
+
+});
+    </script>
+  </body>
+</html>
