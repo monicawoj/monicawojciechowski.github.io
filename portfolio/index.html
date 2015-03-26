@@ -12,6 +12,23 @@ title: Leverage Inventory
 body {
     padding: 30px;
 }
+
+h1 {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+p {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+}
+#p2 {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 8px;
+}
+
 input[type=range] {
     /*removes default webkit styles*/
     -webkit-appearance: none;
@@ -219,8 +236,6 @@ input[type=range]:focus::-ms-fill-upper {
     float:left;
 }
 
-#note
-
   </style>
 </head>
 
@@ -235,18 +250,18 @@ input[type=range]:focus::-ms-fill-upper {
   <input type="range" min="1" max="100" id="nValue">
 </p>
 
-    <div style="width: 50%; height: 50%; float:left;" id="self_relative">
+    <div style="width: 45%; height: 100%; float:left;" id="self_relative">
     <p>Self Ratings</p>
     <div id = "chart"></div>
     </div>
 
-    <div style="width: 50%; height: 50%; float:right;" id="third_relative">
+    <div style="width: 45%; height: 100%; float:right;" id="third_relative">
     <p>3rd Party Ratings</p>
     <div id = "chart2"></div>
     </div>
-    <div style="width: 100%; height: 50%; clear:both">
-    <p>Percentile: Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, in percentiles, relative to full-time Wharton MBAs in the 2014 and 2015 classes (n=256).</p>
-    <p>Leverage Inventory beta reports designed by Monica Wojciechowski, 3/25/15</p>
+    <div id="holder" style="width: 100%; height: 50%; clear:both">
+    <p id="p1">Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, in percentiles, relative to full-time Wharton MBAs in the 2014 and 2015 classes (n=256).</p>
+    <p id="p2">Leverage Inventory beta reports designed by Monica Wojciechowski, 3/25/15</p>
     </div>
 
 <script src="js/d3.v3.min.js"></script>
@@ -379,7 +394,7 @@ var self_relative = [
   "data": {
    
     "Pathos": dataset[result-1].Pathos1,
-    "Team-building": dataset[result-1-1].Team1,
+    "Team-building": dataset[result-1].Team1,
     "Exchange": dataset[result-1].Exchange1,
     "Allocentrism": dataset[result-1].Allocentrism1,
     "Agency": dataset[result-1].Agency1,
