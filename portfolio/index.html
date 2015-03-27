@@ -23,6 +23,13 @@ p {
   font-size: 16px;
 }
 
+#subtitle1, #subtitle2 {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
 }
 #p2 {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -258,21 +265,24 @@ input[type=range]:focus::-ms-fill-upper {
          style="display: inline-block; width: 240px; text-align: right">
          Student ID = <span id="nValue-value">…</span>
   </label>
-  <input type="range" min="1" max="100" id="nValue">
+  <input type="range" min="1" max="98" id="nValue">
 </p>
 
-    <div style="width: 40%; height: 100%; float:left;" id="self_relative">
-    <p>Self Ratings</p>
+
+    <div style="width: 43%; height: 100%; float:left;" id="self_relative">
+    <p id="subtitle1">Self Ratings</p>
     <div id = "chart"></div>
     </div>
 
-    <div style="width: 40%; height: 100%; float:right;" id="third_relative">
-    <p>3rd Party Ratings</p>
+    <div style="width: 43%; height: 100%; float:right;" id="third_relative">
+    <p id="subtitle2">3rd Party Ratings</p>
     <div id = "chart2"></div>
     </div>
 
+
+
     <div id="holder" style="width: 100%; height: 50%; clear:both">
-    <p id="p1">Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, from “Never” (1) to “Always” (4).</p>
+    <p id="p1"><br><br>Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, from “Never” (1) to “Always” (4).</p>
     <p id="p2">Leverage Inventory beta reports designed by Monica Wojciechowski, 3/25/15</p>
     </div>
 
@@ -317,18 +327,18 @@ d3.csv(levdata, function(data) {
 var self_relative = [
   {
   "data": {
-     
-    "Pathos": dataset[result-1].Pathos1,
+    
+    "Network": dataset[result-1].Network1, 
     "Team-building": dataset[result-1].Team1,
     "Exchange": dataset[result-1].Exchange1,
     "Allocentrism": dataset[result-1].Allocentrism1,
-    "Agency": dataset[result-1].Agency1,
     "Situation Awareness": dataset[result-1].SA1,
+    "Agency": dataset[result-1].Agency1,
     "Intentionality": dataset[result-1].Intentionality1,
     "Logos": dataset[result-1].Logos1,
     "Might": dataset[result-1].Might1,
     "Ethos": dataset[result-1].Ethos1,
-    "Network": dataset[result-1].Network1,
+    "Pathos": dataset[result-1].Pathos1,
     "Coalition": dataset[result-1].Coalition1,
     }
   }
@@ -339,17 +349,17 @@ var third_relative = [
   {
   "data": {
    
-    "Pathos": dataset[result-1].Pathos3,
+   "Network": dataset[result-1].Network3,
     "Team-building": dataset[result-1].Team3,
     "Exchange": dataset[result-1].Exchange3,
     "Allocentrism": dataset[result-1].Allocentrism3,
-    "Agency": dataset[result-1].Agency3,
     "Situation Awareness": dataset[result-1].SA3,
+    "Agency": dataset[result-1].Agency3,
     "Intentionality": dataset[result-1].Intentionality3,
     "Logos": dataset[result-1].Logos3,
     "Might": dataset[result-1].Might3,
     "Ethos": dataset[result-1].Ethos3,
-     "Network": dataset[result-1].Network3,
+     "Pathos": dataset[result-1].Pathos3,
     "Coalition": dataset[result-1].Coalition3, 
     }
   }
