@@ -250,17 +250,29 @@ input[type=range]:focus::-ms-fill-upper {
   <input type="range" min="1" max="100" id="nValue">
 </p>
 
-    <div style="width: 45%; height: 100%; float:left;" id="self_relative">
+    <div style="width: 43%; height: 100%; float:left;" id="self_relative">
     <p>Self Ratings</p>
     <div id = "chart"></div>
     </div>
 
-    <div style="width: 45%; height: 100%; float:right;" id="third_relative">
+    <div style="width: 43%; height: 100%; float:left;" id="third_relative">
     <p>3rd Party Ratings</p>
     <div id = "chart2"></div>
     </div>
+
+<div style="height: 100%; float:left;" id="legend">
+  <svg id="legend_box" width="100" height="500">
+    <rect x="0" y="240" width="20" height="20" fill="#ff7f7f"/>
+    <text x="24" y="253" font-family="sans-serif" font-size="11px" fill="black">"Hard" Power</text>
+    <rect x="0" y="280" width="20" height="20" fill="#9999ff"/>
+    <text x="24" y="293" font-family="sans-serif" font-size="11px" fill="black">"Soft" Power</text>
+    <rect x="0" y="320" width="20" height="20" fill="#abf9b4"/>
+    <text x="24" y="333" font-family="sans-serif" font-size="11px" fill="black">"Smart" Power</text>
+  </svg>
+</div>
+
     <div id="holder" style="width: 100%; height: 50%; clear:both">
-    <p id="p1">Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, in percentiles, relative to full-time Wharton MBAs in the 2014 and 2015 classes (n=256).</p>
+    <p id="p1">Each wedge shows your score for a particular influence strategy. The scale is frequency-of-use, from “Never” (1) to “Always” (4).</p>
     <p id="p2">Leverage Inventory beta reports designed by Monica Wojciechowski, 3/25/15</p>
     </div>
 
