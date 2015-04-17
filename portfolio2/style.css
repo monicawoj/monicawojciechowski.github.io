@@ -3,7 +3,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldse
 }
 
 body {
-	background: #f2f0eb url(images/bg.png);
+	background: #f2f0eb url(http://bezigncreative.com/wp-content/uploads/2012/11/birdy-pattern.jpg);
 	font: 16px Helvetica, Arial, Sans-Serif; color: #636363; line-height: 24px;
 }
 
@@ -20,7 +20,7 @@ ul#nav {
 }
 	ul#nav li {
 		width: 126px; height: 33px; float: left; padding: 13px 0 0 0;
-		background: url(images/nav-bg.png);
+		background: url(http://dc299.4shared.com/img/Yc-ZoCB7/s3/12f091e3fa0/Pattern_Pieces_-_Chevron_-_lig.JPG);
 		font-weight: bold; text-align: center; text-transform: uppercase;
 	}
 		ul#nav li:nth-child(1) {
@@ -45,7 +45,7 @@ ul#nav {
 
 #header {
 	height: 244px; padding: 52px 0 0 57px;
-	background: url(images/home-header.jpg);
+	background: url(http://dc299.4shared.com/img/Yc-ZoCB7/s3/12f091e3fa0/Pattern_Pieces_-_Chevron_-_lig.JPG);
 }
 
 	#header h1 {
