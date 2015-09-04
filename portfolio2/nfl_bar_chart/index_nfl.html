@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Massey-Peabody Power Rankings</title>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.bar.positive {
+  fill: steelblue;
+}
+
+.bar.negative {
+  fill: brown;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+text.shadow {
+  stroke: #fff;
+  stroke-width: 2.5px;
+  opacity: 0.9;
+}
+
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: green ;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+.grid .tick {
+    stroke: white;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+.grid path {
+          stroke-width: 0;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.tip.v0.6.3.js"></script>
+<script>
+
+var margin = {top: 70, right: 10, bottom: 10, left: 50},
+    width = 860 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+var y = d3.scale.ordinal()
+    .rangeRoundBands([0, height], .1);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("top");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return d.Tm + "<strong>: </strong> <span style='color:yellow'>" + d.pts + "</span>";
+  })
+  ;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// function for the x grid lines
+function make_x_axis() {
+    return d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ticks(15)
+    };
+
+svg.call(tip);
+
+d3.tsv("mp nfl 2015 week00.txt", type, function(error, data) {
+  //x.domain(d3.extent(data, function(d) { return d.mp; })).nice();
+  x.domain([-25,30]).nice();
+  y.domain(data.map(function(d) { return d.team; }));
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", function(d) { return d.pts < 0 ? "bar negative" : "bar positive"; })
+      .attr("x", function(d) { return x(Math.min(0, d.pts)); })
+      .attr("y", function(d) { return y(d.team); })
+      .attr("width", function(d) { return Math.abs(x(d.pts) - x(0)); })
+      .attr("height", y.rangeBand())
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
+      ;
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .call(xAxis);
+
+ // Draw the x Grid lines
+    svg.append("g")
+        .attr("class", "grid")
+        .attr("transform", "translate(0," + height + ")")
+        .call(make_x_axis()
+            .tickSize(-height, 0, 0)
+            .tickFormat("")
+        );
+
+// Add the Y Axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+
+  svg.append("g")
+      .attr("class", "y axis")
+    .append("line")
+      .attr("x1", x(0))
+      .attr("x2", x(0))
+      .attr("y2", height);
+
+      // Add the text label for the Y axis
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("x", margin.top - (height / 2))
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Team");
+
+    // Add the title
+    svg.append("text")
+        .attr("x", (width / 2))     
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+  //      .style("text-decoration", "underline")
+        .text("Massey-Peabody Power Rankings");
+
+});
+
+function type(d) {
+  d.pts = +d.pts;
+  return d;
+}
+
+</script>
