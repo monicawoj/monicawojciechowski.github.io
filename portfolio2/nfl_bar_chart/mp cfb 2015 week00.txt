@@ -1,0 +1,128 @@
+rank	team	pts
+1	Alabama	29.18
+2	Ohio State	26.46
+3	LSU	22.27
+4	Georgia	20.29
+5	TCU	20.13
+6	Auburn	19.31
+7	Oklahoma	19.06
+8	Tennessee	18.61
+9	Notre Dame	18.27
+10	Michigan State	17.71
+11	UCLA	17.39
+12	Ole Miss	16.68
+13	Baylor	16.64
+14	Arkansas	15.99
+15	USC	15.62
+16	Florida State	15.13
+17	Clemson	15.34
+18	Texas A&M	15.00
+19	Oregon	14.46
+20	Stanford	14.37
+21	Mississippi State	13.54
+22	Arizona State	10.51
+23	Texas	10.40
+24	Florida	9.97
+25	Georgia Tech	9.76
+26	Wisconsin	9.66
+27	Missouri	9.42
+28	Miami (FL)	9.17
+29	West Virginia	9.23
+30	Virginia Tech	8.75
+31	California	8.57
+32	Oklahoma State	8.46
+33	Kansas State	7.77
+34	Nebraska	7.17
+35	Louisville	7.08
+36	Penn State	7.06
+37	Utah	6.69
+38	Texas Tech	6.66
+39	Michigan	6.61
+40	Minnesota	6.61
+41	North Carolina State	6.39
+42	Boise State	6.22
+43	Arizona	5.85
+44	South Carolina	5.55
+45	North Carolina	5.26
+46	Kentucky	5.15
+47	Pittsburgh	4.64
+48	Washington	3.71
+49	Marshall	3.50
+50	Brigham Young	3.29
+51	Iowa	3.24
+52	Virginia	2.88
+53	Boston College	1.51
+54	Louisiana Tech	0.63
+55	Temple	0.26
+56	Illinois	0.25
+57	Vanderbilt	-0.01
+58	Indiana	-0.06
+59	Western Michigan	-0.39
+60	Northwestern	-0.68
+61	Duke	-0.96
+62	Colorado	-1.07
+63	San Diego State	-1.09
+64	Toledo	-1.27
+65	Utah State	-1.49
+66	Purdue	-1.88
+67	Washington State	-2.01
+68	Georgia Southern	-2.05
+69	Memphis	-2.08
+70	East Carolina	-2.14
+71	Iowa State	-2.24
+72	Cincinnati	-2.28
+73	Maryland	-2.32
+74	Appalachian State	-2.85
+75	Syracuse	-2.92
+76	Western Kentucky	-2.94
+77	Rutgers	-3.62
+78	Northern Illinois	-3.67
+79	UCF	-4.66
+80	Wake Forest	-4.89
+81	Middle Tennessee	-5.03
+82	Arkansas State	-5.25
+83	Air Force	-5.87
+84	Navy	-6.10
+85	Oregon State	-6.14
+86	Colorado State	-6.25
+87	Ohio	-7.13
+88	Houston	-7.38
+89	Louisiana-Lafayette	-7.67
+90	Florida International	-7.73
+91	Central Michigan	-8.02
+92	Ball State	-8.25
+93	Nevada	-8.38
+94	Fresno State	-8.94
+95	Rice	-9.06
+96	Tulane	-9.19
+97	Kansas	-9.27
+98	Florida Atlantic	-9.40
+99	New Mexico	-9.43
+100	South Florida	-9.70
+101	Massachusetts	-9.72
+102	Texas State	-10.04
+103	Akron	-10.30
+104	Bowling Green	-10.79
+105	San Jose State	-10.86
+106	Louisiana-Monroe	-11.60
+107	UTEP	-11.72
+108	Southern Miss	-11.78
+109	Kent State	-11.92
+110	Hawaii	-11.96
+111	Old Dominion	-13.19
+112	Idaho	-13.45
+113	Tulsa	-13.58
+114	Connecticut	-14.86
+115	Miami (OH)	-15.87
+116	Wyoming	-16.67
+117	North Texas	-16.68
+118	South Alabama	-16.76
+119	Army	-17.08
+120	New Mexico State	-17.11
+121	Buffalo	-17.14
+122	UTSA	-17.22
+123	UNLV	-18.49
+124	Georgia State	-18.52
+125	Eastern Michigan	-19.05
+126	Troy	-19.21
+127	Southern Methodist	-20.02
