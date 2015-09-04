@@ -1,0 +1,33 @@
+Tm	team	pts
+New England	NE	8.00
+Green Bay	GB	5.54
+Denver	DEN	5.05
+Dallas	DAL	4.84
+Seattle	SEA	3.80
+New Orleans	NO	3.55
+Baltimore	BAL	3.11
+Indianapolis	IND	2.84
+Miami	MIA	1.33
+San Diego	SD	0.93
+Pittsburgh	PIT	0.80
+Detroit	DET	0.47
+Arizona	ARI	0.41
+Carolina	CAR	0.28
+Cincinnati	CIN	0.10
+St. Louis	STL	-0.09
+Buffalo	BUF	-0.19
+NY Giants	NYG	-0.25
+Kansas City	KC	-0.43
+San Francisco	SF	-0.50
+Philadelphia	PHI	-0.50
+Atlanta	ATL	-0.56
+Minnesota	MIN	-1.90
+Chicago	CHI	-1.94
+Washington	WAS	-2.39
+Houston	HOU	-2.72
+NY Jets	NYJ	-3.60
+Cleveland	CLE	-4.42
+Tampa Bay	TB	-4.86
+Oakland	OAK	-5.42
+Jacksonville	JAC	-5.59
+Tennessee	TEN	-5.70
