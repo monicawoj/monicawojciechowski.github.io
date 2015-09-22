@@ -1,0 +1,129 @@
+Team,Conference,pts,Rank
+Oregon,Pac-12 North,14.5,19
+Stanford,Pac-12 North,14.4,20
+California,Pac-12 North,8.6,31
+Washington,Pac-12 North,3.7,48
+Washington State,Pac-12 North,-2,68
+Oregon State,Pac-12 North,-6.1,85
+UCLA,Pac-12 South,17.4,11
+USC,Pac-12 South,15.6,15
+Arizona State,Pac-12 South,10.5,22
+Utah,Pac-12 South,6.7,37
+Arizona,Pac-12 South,5.8,43
+Colorado,Pac-12 South,-1.1,63
+TCU,Big 12 ,20.1,5
+Oklahoma,Big 12 ,19.1,7
+Baylor,Big 12 ,16.6,13
+Texas,Big 12 ,10.4,23
+West Virginia,Big 12 ,9.2,28
+Oklahoma State,Big 12 ,8.5,32
+Kansas State,Big 12 ,7.8,33
+Texas Tech,Big 12 ,6.7,37
+Iowa State,Big 12 ,-2.2,72
+Kansas,Big 12 ,-9.3,98
+Wisconsin,Big Ten West,9.7,26
+Nebraska,Big Ten West,7.2,34
+Minnesota,Big Ten West,6.6,39
+Iowa,Big Ten West,3.2,51
+Illinois,Big Ten West,0.3,55
+Northwestern,Big Ten West,-0.7,61
+Purdue,Big Ten West,-1.9,67
+Ohio State,Big Ten East,26.5,2
+Michigan State,Big Ten East,17.7,10
+Penn State,Big Ten East,7.1,35
+Michigan,Big Ten East,6.6,39
+Indiana,Big Ten East,-0.1,59
+Maryland,Big Ten East,-2.3,73
+Rutgers,Big Ten East,-3.6,78
+Alabama,SEC West,29.2,1
+LSU,SEC West,22.3,3
+Auburn,SEC West,19.3,6
+Ole Miss,SEC West,16.7,12
+Arkansas,SEC West,16,14
+Texas A&M,SEC West,15,18
+Mississippi State,SEC West,13.5,21
+Georgia,SEC East,20.3,4
+Tennessee,SEC East,18.6,8
+Florida,SEC East,10,24
+Missouri,SEC East,9.4,27
+South Carolina,SEC East,5.6,44
+Kentucky,SEC East,5.1,46
+Vanderbilt,SEC East,0,57
+FSU,ACC Atlantic,15.1,17
+Clemson,ACC Atlantic,15.3,16
+Louisville,ACC Atlantic,7.1,35
+NC State,ACC Atlantic,6.4,41
+Boston College,ACC Atlantic,1.5,53
+Syracuse,ACC Atlantic,-2.9,75
+Wake Forest,ACC Atlantic,-4.9,81
+Georgia Tech,ACC Coastal,9.8,25
+Miami (FL),ACC Coastal,9.2,28
+Virginia Tech,ACC Coastal,8.7,30
+UNC,ACC Coastal,5.3,45
+Pittsburgh,ACC Coastal,4.6,47
+Virginia,ACC Coastal,2.9,52
+Duke,ACC Coastal,-1,62
+Temple,American East,0.3,55
+East Carolina,American East,-2.1,70
+Cincinnati,American East,-2.3,73
+UCF,American East,-4.7,80
+South Florida,American East,-9.7,101
+Connecticut,American East,-14.9,115
+Memphis,American West,-2.1,70
+Navy,American West,-6.1,85
+Houston,American West,-7.4,89
+Tulane,American West,-9.2,97
+Tulsa,American West,-13.6,114
+SMU,American West,-20,128
+Western Kentucky,C-USA East,-2.9,75
+Middle Tennessee,C-USA East,-5,82
+FIU,C-USA East,-7.7,90
+FAU,C-USA East,-9.4,99
+Old Dominion,C-USA East,-13.2,112
+Charlotte,C-USA East,0,57
+Marshall,C-USA West,3.5,49
+Louisiana Tech,C-USA West,0.6,54
+Rice,C-USA West,-9.1,96
+UTEP,C-USA West,-11.7,108
+Southern Miss,C-USA West,-11.8,109
+North Texas,C-USA West,-16.7,117
+UTSA,C-USA West,-17.2,123
+Notre Dame,FBS Indep. ,18.3,9
+BYU,FBS Indep. ,3.3,50
+Army,FBS Indep. ,-17.1,120
+Ohio,MAC East,-7.1,88
+Massachussets,MAC East,-9.7,101
+Akron,MAC East,-10.3,104
+Bowling Green,MAC East,-10.8,105
+Kent State,MAC East,-11.9,110
+Miami (OH),MAC East,-15.9,116
+Buffalo,MAC East,-17.1,120
+Western Michigan,MAC West,-0.4,60
+Toledo,MAC West,-1.3,65
+Northern Illinois,MAC West,-3.7,79
+Central Michigan,MAC West,-8,92
+Ball State,MAC West,-8.2,93
+Eastern Michigan,MAC West,-19,126
+Boise State,MW Mountain,6.2,42
+Utah State,MW Mountain,-1.5,66
+Air Force,MW Mountain,-5.9,84
+Colorado State,MW Mountain,-6.3,87
+New Mexico,MW Mountain,-9.4,99
+Wyoming,MW Mountain,-16.7,117
+San Diego State,MW West,-1.1,63
+Nevada,MW West,-8.4,94
+Fresno State,MW West,-8.9,95
+San Jose State,MW West,-10.9,106
+Hawaii,MW West,-12,111
+UNLV,MW West,-18.5,124
+Georgia Southern,Sun Belt ,-2,68
+Appalachian State,Sun Belt ,-2.9,75
+Arkansas State,Sun Belt ,-5.2,83
+UL-Lafayette,Sun Belt ,-7.7,90
+Texas State,Sun Belt ,-10,103
+UL-Monroe,Sun Belt ,-11.6,107
+Idaho,Sun Belt ,-13.5,113
+South Alabama,Sun Belt ,-16.8,119
+New Mexico State,Sun Belt ,-17.1,120
+Georgia State,Sun Belt ,-18.5,124
+Troy,Sun Belt ,-19.2,127
