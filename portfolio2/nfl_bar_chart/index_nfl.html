@@ -81,8 +81,16 @@ text.shadow {
 <script src="d3.tip.v0.6.3.js"></script>
 <script>
 
+var file_name = "mp nfl 2015 week00.txt";
+
+var split = file_name.split("nfl").pop().split(" w");
+var split2 = file_name.split("week").pop().split(".txt");
+
+var year = split[0];
+var week = split2[0];
+
 var margin = {top: 70, right: 10, bottom: 10, left: 50},
-    width = 860 - margin.left - margin.right,
+    width = 630 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
@@ -91,8 +99,12 @@ var x = d3.scale.linear()
 var y = d3.scale.ordinal()
     .rangeRoundBands([0, height], .1);
 
+var line = d3.svg.line()
+    .x(function(d) { return xScale(d.x); })
+
 var xAxis = d3.svg.axis()
     .scale(x)
+    .tickValues([-15,-12,-9,-6,-3,0,3,6,9,12,15])
     .orient("top");
 
 var yAxis = d3.svg.axis()
@@ -103,7 +115,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return d.Tm + "<strong>: </strong> <span style='color:yellow'>" + d.pts + "</span>";
+    return d.rank + ") " + d.Tm + "<strong>: </strong> <span style='color:yellow'>" + d.pts + "</span>";
   })
   ;
 
@@ -117,15 +129,15 @@ var svg = d3.select("body").append("svg")
 function make_x_axis() {
     return d3.svg.axis()
         .scale(x)
+        .ticks(26)
         .orient("bottom")
-        .ticks(15)
     };
 
 svg.call(tip);
 
-d3.tsv("mp nfl 2015 week00.txt", type, function(error, data) {
+d3.tsv(file_name, type, function(error, data) {
   //x.domain(d3.extent(data, function(d) { return d.mp; })).nice();
-  x.domain([-25,30]).nice();
+  x.domain([-15,15]);
   y.domain(data.map(function(d) { return d.team; }));
 
   svg.selectAll(".bar")
@@ -166,23 +178,31 @@ d3.tsv("mp nfl 2015 week00.txt", type, function(error, data) {
       .attr("x2", x(0))
       .attr("y2", height);
 
-      // Add the text label for the Y axis
-    svg.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("x", margin.top - (height / 2))
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Team");
+//      // Add the text label for the Y axis
+//    svg.append("text")
+//        .attr("transform", "rotate(-90)")
+//        .attr("y", 6)
+//        .attr("x", margin.top - (height / 2))
+//        .attr("dy", ".71em")
+//        .style("text-anchor", "end")
+//        .text("Team");
 
-    // Add the title
+// Add the title
     svg.append("text")
-        .attr("x", (width / 2))     
-        .attr("y", 0 - (margin.top / 2))
+        .attr("x", width/2)     
+        .attr("y", 0 - (margin.top / 2.5))
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
-  //      .style("text-decoration", "underline")
+        .style("font-size", "20px")
         .text("Massey-Peabody Power Rankings");
+
+ // // Add the subtitle (right)
+ //    svg.append("text")
+ //        .attr("x", width - 100)     
+ //        .attr("y", 0 - (margin.top / 2.5))
+ //        .attr("text-anchor", "middle")
+ //        .style("font-size", "16px")
+ //        .attr("fill","lightgrey")
+ //        .text(year + ", through Week " + week);
 
 });
 
@@ -191,4 +211,14 @@ function type(d) {
   return d;
 }
 
+//Adds the week label to the bottom of chart
+var week_label = svg.append("text")
+    .attr("x",width - 250)
+    .attr("y",height - margin.bottom)
+    .attr("font-size", "20px")
+    .attr("fill","lightgrey")
+    .text(year + ", through Week " + week);
+
 </script>
+
+<p>Created by: Monica Wojciechowski</p>
